@@ -1,0 +1,2581 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Login</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: linear-gradient(135deg, #4ade80, #2dd4bf, #14b8a6); 
+            color: #1e293b; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 40px 20px;
+            overflow: hidden;
+        }
+
+        .top-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo-graphic {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.2;
+        }
+
+        .welcome-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 30px;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .btn-auth {
+            background: #ffffff;
+            border: none;
+            padding: 16px 20px;
+            border-radius: 35px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: 0.2s;
+        }
+
+        .btn-auth:active {
+            transform: scale(0.98);
+        }
+
+        .footer-terms {
+            font-size: 13px;
+            color: #0f172a;
+            text-align: center;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-terms a {
+            color: #0f172a;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-section">
+        <div class="logo-graphic">🎙️✨</div>
+        <h1>Hello!</h1>
+        <div class="welcome-text">welcome here</div>
+    </div>
+
+    <div class="auth-container">
+        <button class="btn-auth" onclick="handleGoogleLogin()">
+            <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.22 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.99 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.22 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
+            Sign in with Google
+        </button>
+
+        <button class="btn-auth" onclick="handlePhoneLogin()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Sign in with Phone
+        </button>
+    </div>
+
+    <div class="footer-terms">
+        Sign in to agree <a href="#" onclick="alert('Terms & Conditions')">Agreement</a> And <br>
+        <a href="#" onclick="alert('Privacy Policy')">Privacy Policy</a>
+    </div>
+
+    <script>
+        function handleGoogleLogin() {
+            alert('Google দিয়ে লগইন সফল হয়েছে! হোম পেজে নিয়ে যাওয়া হচ্ছে...');
+            // এখানে পরবর্তী হোম পেজে রিডাইরেক্ট করার কোড বসবে
+        }
+
+        function handlePhoneLogin() {
+            let phone = prompt('আপনার মোবাইল নম্বরটি দিন (যেমন: 01616261693):');
+            if(phone) {
+                alert(phone + ' নম্বরে একটি ওটিপি (OTP) পাঠানো হয়েছে!');
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Profile Setup</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: #ffffff; 
+            color: #1e293b; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 30px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Profile Picture Upload */
+        .profile-pic-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #10b981;
+            cursor: pointer;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 14px 16px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            color: #1e293b;
+            outline: none;
+            transition: 0.2s;
+        }
+        .input-box:focus {
+            border-color: #10b981;
+            background: #fff;
+        }
+
+        /* Gender Selection */
+        .gender-options {
+            display: flex;
+            gap: 12px;
+        }
+        .gender-btn {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            background: #f8fafc;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .gender-btn.active {
+            background: #e0f2fe;
+            border-color: #38bdf8;
+            color: #0284c7;
+        }
+
+        /* Birthday Pickers */
+        .birthday-selectors {
+            display: flex;
+            gap: 10px;
+        }
+        .birthday-selectors select {
+            flex: 1;
+            padding: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        /* Save Button */
+        .btn-save {
+            background: #2dd4bf;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(45, 212, 191, 0.4);
+            transition: 0.2s;
+        }
+        .btn-save:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Profile Avatar -->
+        <div class="profile-pic-container">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" alt="Avatar" class="avatar" id="avatarImg" onclick="alert('প্রোফাইল ছবি পরিবর্তন করতে পারেন')">
+        </div>
+
+        <!-- Nickname -->
+        <div class="form-group">
+            <label>Nickname</label>
+            <input type="text" class="input-box" id="nickname" value="Dj Sakb">
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="gender-options">
+                <div class="gender-btn active" id="maleBtn" onclick="selectGender('male')">♂ Male</div>
+                <div class="gender-btn" id="femaleBtn" onclick="selectGender('female')">♀ Female</div>
+            </div>
+        </div>
+
+        <!-- Birthday -->
+        <div class="form-group">
+            <label>Birthday</label>
+            <div class="birthday-selectors">
+                <select id="year">
+                    <option value="1999" selected>1999 Y</option>
+                    <option value="2000">2000 Y</option>
+                    <option value="2001">2001 Y</option>
+                </select>
+                <select id="month">
+                    <option value="1" selected>1 M</option>
+                    <option value="2">2 M</option>
+                </select>
+                <select id="day">
+                    <option value="1" selected>1 D</option>
+                    <option value="2">2 D</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Invitation Code -->
+        <div class="form-group">
+            <label>Invitation code</label>
+            <input type="text" class="input-box" placeholder="Invitation code">
+        </div>
+
+        <!-- Save Button -->
+        <button class="btn-save" onclick="saveProfile()">Save</button>
+    </div>
+
+    <script>
+        let selectedGender = 'male';
+
+        function selectGender(gender) {
+            selectedGender = gender;
+            if(gender === 'male') {
+                document.getElementById('maleBtn').classList.add('active');
+                document.getElementById('femaleBtn').classList.remove('active');
+            } else {
+                document.getElementById('femaleBtn').classList.add('active');
+                document.getElementById('maleBtn').classList.remove('active');
+            }
+        }
+
+        function saveProfile() {
+            const nick = document.getElementById('nickname').value;
+            if(!nick.trim()) {
+                alert('অনুগ্রহ করে একটি নিকনেম দিন!');
+                return;
+            }
+            alert('প্রোফাইল সফলভাবে সংরক্ষণ করা হয়েছে! হোম পেজে প্রবেশ করা হচ্ছে...');
+            // পরবর্তী হোম পেজ বা লাইভ রুমের স্ক্রিনশট দিতে পারেন
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Home</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f1f5f9; color: #0f172a; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 60px; }
+
+        /* Top Header Navigation */
+        .top-header { background: #ffffff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 10; }
+        .nav-tabs { display: flex; gap: 16px; align-items: center; font-weight: bold; font-size: 16px; color: #64748b; }
+        .nav-tabs span.active { color: #0f172a; font-size: 18px; border-bottom: 2px solid #10b981; padding-bottom: 2px; }
+        .header-icons { display: flex; gap: 12px; font-size: 18px; cursor: pointer; }
+
+        /* Banner & Quick Tools */
+        .content-area { padding: 12px; }
+        .banner { width: 100%; height: 110px; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: 12px; color: #f59e0b; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 12px; }
+
+        .quick-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
+        .action-card { background: #ffffff; padding: 10px; border-radius: 10px; text-align: center; font-size: 13px; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.05); cursor: pointer; }
+        .action-card.wealth { background: #fef3c7; color: #b45309; }
+        .action-card.cp { background: #fce7f3; color: #be185d; }
+        .action-card.invite { background: #dcfce7; color: #15803d; }
+
+        /* Live Stream Cards Grid */
+        .live-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .live-card { background: #ffffff; border-radius: 12px; overflow: hidden; position: relative; box-shadow: 0 2px 8px rgba(0,0,0,0.06); height: 180px; }
+        .live-bg { width: 100%; height: 100%; object-fit: cover; }
+        .live-info { position: absolute; bottom: 8px; left: 8px; right: 8px; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
+        .live-badge { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.5); color: #fff; padding: 2px 6px; border-radius: 10px; font-size: 10px; }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-around; padding: 10px 0; z-index: 10; }
+        .nav-item { text-align: center; font-size: 11px; color: #94a3b8; cursor: pointer; flex: 1; }
+        .nav-item.active { color: #10b981; font-weight: bold; }
+        .nav-icon { font-size: 20px; display: block; margin-bottom: 2px; }
+
+        /* Welcome Gift Modal Overlay */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 100; padding: 20px; }
+        .modal-box { background: #ffffff; border-radius: 20px; width: 100%; max-width: 340px; overflow: hidden; text-align: center; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3); animation: popIn 0.3s ease; }
+        
+        .modal-header { background: linear-gradient(135deg, #38bdf8, #0284c7); padding: 20px; color: white; }
+        .modal-header h2 { font-size: 20px; margin-bottom: 6px; }
+        .modal-header p { font-size: 12px; opacity: 0.9; }
+
+        .gifts-container { padding: 20px 15px; display: flex; justify-content: space-around; gap: 8px; }
+        .gift-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px 5px; flex: 1; position: relative; }
+        .gift-badge { position: absolute; top: -8px; right: 4px; background: #fbbf24; color: #78350f; font-size: 9px; font-weight: bold; padding: 1px 5px; border-radius: 6px; }
+        .gift-icon { font-size: 32px; margin-bottom: 5px; }
+        .gift-name { font-size: 11px; font-weight: bold; color: #0284c7; }
+
+        .modal-footer { padding: 0 20px 20px 20px; }
+        .btn-confirm { background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; border: none; padding: 12px; width: 100%; border-radius: 25px; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4); }
+        .modal-subtitle { font-size: 11px; color: #94a3b8; margin-top: 10px; }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="nav-tabs">
+            <span style="font-size: 14px;">Me</span>
+            <span class="active">Hot</span>
+            <span>Bangladesh 🇧🇩</span>
+            <span style="font-size: 14px;">Event</span>
+        </div>
+        <div class="header-icons">
+            <span>➕</span>
+            <span>🔍</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-area">
+        <!-- Banner -->
+        <div class="banner">
+            👑 TakaLive Pro Super Event $500,000
+        </div>
+
+        <!-- Quick Action Cards -->
+        <div class="quick-actions">
+            <div class="action-card wealth">💰 Wealth</div>
+            <div class="action-card cp">💖 CP</div>
+            <div class="action-card invite">🎁 Invite</div>
+        </div>
+
+        <!-- Live Stream Cards -->
+        <div class="live-grid">
+            <div class="live-card">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400" class="live-bg" alt="Live Streamer">
+                <div class="live-badge">🇧🇩 Live</div>
+                <div class="live-info">
+                    <span>👑 DJ Sakib</span>
+                    <span>📊 18</span>
+                </div>
+            </div>
+            <div class="live-card">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400" class="live-bg" alt="Live Streamer">
+                <div class="live-badge">🇧🇩 Live</div>
+                <div class="live-info">
+                    <span>🔥 Nila Live</span>
+                    <span>📊 16</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <div class="nav-item active">
+            <span class="nav-icon">🔥</span>
+            Home
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">🪐</span>
+            Discover
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">💬</span>
+            Message
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">👤</span>
+            Me
+        </div>
+    </div>
+
+    <!-- Welcome Gift Modal -->
+    <div class="modal-overlay" id="giftModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>Welcome to TakaLive Pro</h2>
+                <p>TakaLive Pro needs more of your brilliant, kind intelligence.</p>
+            </div>
+
+            <div class="gifts-container">
+                <div class="gift-item">
+                    <span class="gift-badge">Award</span>
+                    <div class="gift-icon">👑</div>
+                    <div class="gift-name">Headwear*30</div>
+                </div>
+                <div class="gift-item">
+                    <span class="gift-badge">Award</span>
+                    <div class="gift-icon">💬</div>
+                    <div class="gift-name">Bubble*30</div>
+                </div>
+                <div class="gift-item">
+                    <span class="gift-badge">Award</span>
+                    <div class="gift-icon">🦁</div>
+                    <div class="gift-name">Ride*30</div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <p class="modal-subtitle" style="margin-bottom: 12px;">Gift has been placed in your backpack.</p>
+                <button class="btn-confirm" onclick="closeModal()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function closeModal() {
+            document.getElementById('giftModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Live Streams</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f8fafc; color: #0f172a; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 70px; }
+
+        /* Top Header Navigation */
+        .top-header { background: #ffffff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 10; }
+        .nav-tabs { display: flex; gap: 14px; align-items: center; font-weight: bold; font-size: 15px; color: #64748b; }
+        .nav-tabs span.active { color: #0f172a; font-size: 18px; border-bottom: 3px solid #10b981; padding-bottom: 2px; }
+        .header-icons { display: flex; gap: 14px; font-size: 18px; cursor: pointer; }
+
+        /* Banner Carousel */
+        .content-area { padding: 12px; }
+        .promo-banner { width: 100%; height: 110px; background: linear-gradient(135deg, #4c1d95, #6d28d9); border-radius: 14px; color: #fff; padding: 12px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(109, 40, 217, 0.25); margin-bottom: 12px; position: relative; overflow: hidden; }
+        .banner-text h4 { font-size: 14px; color: #fde047; }
+        .banner-text p { font-size: 11px; opacity: 0.9; margin-top: 4px; }
+        .banner-badge { background: #e11d48; color: white; padding: 4px 8px; border-radius: 20px; font-size: 10px; font-weight: bold; }
+
+        /* Quick Tools Grid */
+        .quick-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
+        .action-card { background: #ffffff; padding: 10px; border-radius: 12px; text-align: center; font-size: 13px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.04); cursor: pointer; }
+        .action-card.wealth { background: #fffbeb; color: #d97706; border: 1px solid #fef3c7; }
+        .action-card.cp { background: #fdf2f8; color: #db2777; border: 1px solid #fce7f3; }
+        .action-card.invite { background: #f0fdf4; color: #16a34a; border: 1px solid #dcfce7; }
+
+        /* Sub Filter Tabs (Hot / Official) */
+        .sub-filters { display: flex; gap: 10px; margin-bottom: 12px; }
+        .filter-btn { padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: bold; background: #e2e8f0; color: #64748b; border: none; cursor: pointer; }
+        .filter-btn.active { background: #fef08a; color: #854d0e; }
+
+        /* Live Room Grid Cards */
+        .live-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .room-card { background: #ffffff; border-radius: 14px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.06); height: 210px; cursor: pointer; transition: 0.2s; }
+        .room-card:active { transform: scale(0.97); }
+        .room-bg { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Badges & Overlay Details */
+        .rank-badge { position: absolute; top: 8px; right: 8px; background: linear-gradient(45deg, #f59e0b, #ef4444); color: white; width: 22px; height: 22px; border-radius: 50%; font-size: 11px; font-weight: bold; display: flex; justify-content: center; align-items: center; border: 1px solid #fff; }
+        .country-flag { position: absolute; bottom: 10px; left: 10px; font-size: 14px; background: rgba(0,0,0,0.5); padding: 2px 5px; border-radius: 4px; }
+        .viewer-count { position: absolute; bottom: 10px; right: 10px; color: white; font-size: 11px; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.8); display: flex; align-items: center; gap: 3px; }
+        
+        .room-title { position: absolute; bottom: 32px; left: 10px; right: 10px; color: white; font-size: 13px; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.8); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-around; padding: 8px 0; z-index: 10; }
+        .nav-item { text-align: center; font-size: 11px; color: #94a3b8; cursor: pointer; flex: 1; }
+        .nav-item.active { color: #10b981; font-weight: bold; }
+        .nav-icon { font-size: 20px; display: block; margin-bottom: 2px; }
+
+        /* Live Room Modal View */
+        .room-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); z-index: 200; flex-direction: column; justify-content: space-between; padding: 20px; color: white; }
+        .modal-top { display: flex; justify-content: space-between; align-items: center; }
+        .host-info { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); padding: 6px 12px; border-radius: 20px; }
+        .btn-leave { background: #ef4444; color: white; border: none; padding: 8px 16px; border-radius: 20px; font-weight: bold; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <div class="top-header">
+        <div class="nav-tabs">
+            <span style="font-size: 13px;">Me</span>
+            <span class="active">Hot</span>
+            <span>Bangladesh 🇧🇩</span>
+            <span style="font-size: 13px;">Event</span>
+        </div>
+        <div class="header-icons">
+            <span>➕</span>
+            <span>🔍</span>
+        </div>
+    </div>
+
+    <!-- Main Live Streams Content -->
+    <div class="content-area">
+        <!-- Top Promo Banner -->
+        <div class="promo-banner">
+            <div class="banner-text">
+                <h4>💍 Send lucky gifts win</h4>
+                <p>5000 coins (10 times)</p>
+            </div>
+            <span class="banner-badge">100 Times</span>
+        </div>
+
+        <!-- Action Tools -->
+        <div class="quick-actions">
+            <div class="action-card wealth">💰 Wealth</div>
+            <div class="action-card cp">💖 CP</div>
+            <div class="action-card invite">🎁 Invite</div>
+        </div>
+
+        <!-- Sub Filters -->
+        <div class="sub-filters">
+            <button class="filter-btn active">🔥 Hot</button>
+            <button class="filter-btn">Official</button>
+        </div>
+
+        <!-- Live Streams Grid Cards -->
+        <div class="live-grid">
+            <!-- Room 1 -->
+            <div class="room-card" onclick="enterRoom('বগুড়ার কিং', '28')">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" class="room-bg" alt="Bogra King">
+                <div class="rank-badge">1</div>
+                <div class="room-title">বগুড়ার কিং</div>
+                <div class="country-flag">🇧🇩</div>
+                <div class="viewer-count">📊 28</div>
+            </div>
+
+            <!-- Room 2 -->
+            <div class="room-card" onclick="enterRoom('ফেনীর কিং / বেস্ট ফ্রেন্ড', '23')">
+                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400" class="room-bg" alt="Feni King">
+                <div class="rank-badge">2</div>
+                <div class="room-title">বেস্ট ফ্রেন্ড - ফেনীর কিং</div>
+                <div class="country-flag">🇧🇩</div>
+                <div class="viewer-count">📊 23</div>
+            </div>
+
+            <!-- Room 3 -->
+            <div class="room-card" onclick="enterRoom('BINGO BOY', '18')">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400" class="room-bg" alt="Bingo Boy">
+                <div class="rank-badge">3</div>
+                <div class="room-title">BINGO BOY</div>
+                <div class="country-flag">🇮🇳</div>
+                <div class="viewer-count">📊 18</div>
+            </div>
+
+            <!-- Room 4 -->
+            <div class="room-card" onclick="enterRoom('নিঝুম', '16')">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400" class="room-bg" alt="Nijhum">
+                <div class="rank-badge">4</div>
+                <div class="room-title">নিঝুম</div>
+                <div class="country-flag">🇧🇩</div>
+                <div class="viewer-count">📊 16</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <div class="nav-item active">
+            <span class="nav-icon">🔥</span>
+            Home
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">🪐</span>
+            Discover
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">💬</span>
+            Message
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">👤</span>
+            Me
+        </div>
+    </div>
+
+    <!-- Live Streaming Room Modal Interface -->
+    <div class="room-modal" id="liveRoomModal">
+        <div class="modal-top">
+            <div class="host-info">
+                <span style="font-size: 18px;">🔴</span>
+                <span id="activeHostName" style="font-weight: bold;">বগুড়ার কিং</span>
+            </div>
+            <button class="btn-leave" onclick="leaveRoom()">Exit</button>
+        </div>
+
+        <div style="text-align: center;">
+            <h2>🎙️ Live Voice & Audio Room</h2>
+            <p style="color: #94a3b8; font-size: 13px; margin-top: 6px;">লাইভ স্ট্রিমিং চলছে...</p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 15px; text-align: center;">
+            <p style="font-size: 14px;">🎁 গিফট পাঠান এবং ডায়মন্ড জিতুন!</p>
+        </div>
+    </div>
+
+    <script>
+        function enterRoom(hostName, viewers) {
+            document.getElementById('activeHostName').innerText = hostName + " (" + viewers + ")";
+            document.getElementById('liveRoomModal').style.display = 'flex';
+        }
+
+        function leaveRoom() {
+            document.getElementById('liveRoomModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Explore & Discover</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f8fafc; color: #0f172a; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 70px; }
+
+        /* Top Bar */
+        .top-bar { background: #ffffff; padding: 16px; font-size: 20px; font-weight: bold; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 10; }
+
+        /* Main Content Grid & Banners */
+        .explore-container { padding: 14px; display: flex; flex-direction: column; gap: 14px; }
+
+        .event-banner { width: 100%; border-radius: 14px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.08); cursor: pointer; transition: 0.2s; }
+        .event-banner:active { transform: scale(0.98); }
+
+        .banner-hot-badge { position: absolute; top: 10px; left: 10px; background: #ef4444; color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px; font-weight: bold; }
+
+        /* Banners Styling */
+        .b-1 { height: 110px; background: linear-gradient(135deg, #0284c7, #0369a1); color: #fff; padding: 15px; display: flex; flex-direction: column; justify-content: center; }
+        .b-2 { height: 110px; background: linear-gradient(135deg, #000000, #334155); color: #f59e0b; padding: 15px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 900; letter-spacing: 1px; }
+        .b-3 { height: 110px; background: linear-gradient(135deg, #b45309, #78350f); color: #fff; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .b-4 { height: 110px; background: linear-gradient(135deg, #fbbf24, #d97706); color: #78350f; padding: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; font-weight: bold; }
+        .b-5 { height: 110px; background: linear-gradient(135deg, #059669, #047857); color: #fff; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-around; padding: 8px 0; z-index: 10; }
+        .nav-item { text-align: center; font-size: 11px; color: #94a3b8; cursor: pointer; flex: 1; }
+        .nav-item.active { color: #10b981; font-weight: bold; }
+        .nav-icon { font-size: 20px; display: block; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Title -->
+    <div class="top-bar">Explore</div>
+
+    <!-- Banner Content Section -->
+    <div class="explore-container">
+        
+        <!-- Banner 1: Lucky Gift -->
+        <div class="event-banner b-1" onclick="alert('Send Lucky Gifts Win Event!')">
+            <span class="banner-hot-badge">🔥 Hot</span>
+            <h3 style="color: #fef08a;">🎁 Send Lucky Gifts Win</h3>
+            <p style="font-size: 13px; margin-top: 4px;">15,000 coins (100 times)</p>
+        </div>
+
+        <!-- Banner 2: Top Recharge Honor -->
+        <div class="event-banner b-2" onclick="alert('Top Recharge Leaderboard!')">
+            <span class="banner-hot-badge">🔥 Hot</span>
+            👑 TOP RECHARGE HONOR
+        </div>
+
+        <!-- Banner 3: Super Event -->
+        <div class="event-banner b-3" onclick="alert('$500,000 Event Details!')">
+            <span class="banner-hot-badge">🔥 Hot</span>
+            <div>
+                <h3 style="font-size: 20px; color: #fde047;">🦁 Super Agency Event</h3>
+                <p style="font-size: 14px;">$500,000 Rewards</p>
+            </div>
+            <span style="font-size: 30px;">🔥</span>
+        </div>
+
+        <!-- Banner 4: Recharge Rewards -->
+        <div class="event-banner b-4" onclick="alert('Recharge Rewards Offers!')">
+            <h3 style="font-size: 22px;">⚡ Recharge Rewards</h3>
+            <p style="font-size: 12px; opacity: 0.9;">Get Extra Bonus Coins On Every Deposit</p>
+        </div>
+
+        <!-- Banner 5: Invite Friends -->
+        <div class="event-banner b-5" onclick="alert('Invite Friends & Earn!')">
+            <div>
+                <h3 style="font-size: 20px;">🎁 Invite Friends</h3>
+                <p style="font-size: 13px;">Get Coins For Each Referral</p>
+            </div>
+            <div style="background: #fef08a; color: #047857; padding: 8px 14px; border-radius: 20px; font-weight: bold; font-size: 13px;">
+                GET CASH
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <div class="nav-item">
+            <span class="nav-icon">🔥</span>
+            Home
+        </div>
+        <div class="nav-item active">
+            <span class="nav-icon">🪐</span>
+            Discover
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">💬</span>
+            Message
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">👤</span>
+            Me
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Message</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f8fafc; color: #0f172a; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 70px; }
+
+        /* Header */
+        .top-bar { background: #ffffff; padding: 16px; font-size: 20px; font-weight: bold; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 10; }
+        .header-icon { font-size: 20px; cursor: pointer; }
+
+        /* Container */
+        .msg-container { padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+
+        /* Create My Room Card */
+        .create-room-card { background: linear-gradient(135deg, #ccfbf1, #99f6e4); padding: 14px 16px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .room-info { display: flex; align-items: center; gap: 12px; }
+        .room-icon { background: #10b981; color: white; width: 44px; height: 44px; border-radius: 12px; display: flex; justify-content: center; align-items: center; font-size: 22px; }
+        .room-text h4 { font-size: 15px; color: #0f172a; }
+        .room-text p { font-size: 11px; color: #475569; margin-top: 2px; }
+        .btn-go { background: #10b981; color: white; border: none; padding: 8px 18px; border-radius: 20px; font-weight: bold; font-size: 14px; cursor: pointer; box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3); }
+
+        /* Recharge Banner */
+        .promo-banner { width: 100%; height: 75px; background: linear-gradient(135deg, #fbbf24, #d97706); border-radius: 12px; color: #78350f; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; }
+
+        /* Empty Message State */
+        .empty-state { margin-top: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #94a3b8; text-align: center; }
+        .box-icon { font-size: 65px; margin-bottom: 10px; opacity: 0.6; }
+        .empty-text { font-size: 14px; color: #64748b; }
+
+        /* Floating Invite Button */
+        .floating-invite { position: fixed; bottom: 80px; right: 16px; background: #fef08a; border: 1px solid #fde047; padding: 8px 12px; border-radius: 25px; display: flex; align-items: center; gap: 6px; font-weight: bold; font-size: 12px; color: #854d0e; box-shadow: 0 4px 12px rgba(0,0,0,0.15); cursor: pointer; }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-around; padding: 8px 0; z-index: 10; }
+        .nav-item { text-align: center; font-size: 11px; color: #94a3b8; cursor: pointer; flex: 1; }
+        .nav-item.active { color: #10b981; font-weight: bold; }
+        .nav-icon { font-size: 20px; display: block; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="top-bar">
+        <span>Message</span>
+        <span class="header-icon" onclick="alert('কন্টাক্টস / ফ্রেন্ড লিস্ট')">🎒</span>
+    </div>
+
+    <!-- Main Content -->
+    <div class="msg-container">
+        
+        <!-- Create My Room -->
+        <div class="create-room-card">
+            <div class="room-info">
+                <div class="room-icon">🎙️</div>
+                <div class="room-text">
+                    <h4>Create My Room</h4>
+                    <p>Start your journey on TakaLive Pro!</p>
+                </div>
+            </div>
+            <button class="btn-go" onclick="alert('আপনার নিজস্ব লাইভ রুম তৈরি হচ্ছে...')">Go</button>
+        </div>
+
+        <!-- Recharge Rewards Banner -->
+        <div class="promo-banner" onclick="alert('Recharge Rewards Event!')">
+            ⚡ Recharge Rewards Offer
+        </div>
+
+        <!-- Empty Box State -->
+        <div class="empty-state">
+            <div class="box-icon">📦</div>
+            <p class="empty-text">এখনো কোনো ইনবক্স মেসেজ নেই</p>
+        </div>
+
+    </div>
+
+    <!-- Floating Invite Button -->
+    <div class="floating-invite" onclick="alert('বন্ধুদের ইনভাইট করুন এবং আর্ন করুন!')">
+        🎁 INVITE
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <div class="nav-item">
+            <span class="nav-icon">🔥</span>
+            Home
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">🪐</span>
+            Discover
+        </div>
+        <div class="nav-item active">
+            <span class="nav-icon">💬</span>
+            Message
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">👤</span>
+            Me
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Me / Profile</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f8fafc; color: #0f172a; min-height: 100vh; display: flex; flex-direction: column; padding-bottom: 70px; }
+
+        /* Top Profile Header */
+        .profile-header { background: #ffffff; padding: 20px 16px 15px 16px; border-bottom: 1px solid #e2e8f0; }
+        .user-info-box { display: flex; align-items: center; gap: 14px; margin-bottom: 15px; }
+        .user-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 2px solid #10b981; }
+        .user-details h3 { font-size: 18px; font-weight: bold; color: #0f172a; display: flex; align-items: center; gap: 6px; }
+        .user-id { font-size: 12px; color: #64748b; margin-top: 2px; }
+        .id-copy { font-size: 11px; background: #e2e8f0; padding: 1px 6px; border-radius: 4px; cursor: pointer; }
+
+        /* Stats Counter */
+        .stats-row { display: flex; justify-content: space-around; text-align: center; margin-top: 15px; padding-top: 10px; border-top: 1px solid #f1f5f9; }
+        .stat-item h4 { font-size: 14px; font-weight: bold; color: #0f172a; }
+        .stat-item p { font-size: 12px; color: #64748b; }
+
+        /* Wallet Box */
+        .wallet-card { background: #ffffff; margin: 12px 14px 6px 14px; padding: 14px; border-radius: 14px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04); cursor: pointer; }
+        .wallet-title { font-weight: bold; font-size: 15px; }
+        .wallet-balances { display: flex; gap: 12px; font-size: 14px; font-weight: bold; }
+        .coin { color: #d97706; }
+        .diamond { color: #0284c7; }
+
+        /* Invite Banner */
+        .invite-banner { margin: 6px 14px; background: linear-gradient(135deg, #22c55e, #16a34a); padding: 12px 16px; border-radius: 25px; color: white; font-size: 13px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3); cursor: pointer; }
+
+        /* Level & VIP Cards */
+        .level-vip-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 14px; }
+        .lvl-card { background: linear-gradient(135deg, #064e3b, #047857); color: #a7f3d0; padding: 14px; border-radius: 12px; font-weight: bold; font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+        .vip-card { background: linear-gradient(135deg, #1e293b, #0f172a); color: #fde047; padding: 14px; border-radius: 12px; font-weight: bold; font-size: 16px; display: flex; justify-content: space-between; align-items: center; }
+
+        /* Quick Grid Options */
+        .quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 10px 14px; background: #ffffff; padding: 15px; border-radius: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-align: center; }
+        .grid-item { font-size: 13px; font-weight: bold; color: #334155; cursor: pointer; }
+        .grid-icon { font-size: 26px; margin-bottom: 4px; display: block; }
+
+        /* Settings List */
+        .menu-list { background: #ffffff; margin: 10px 14px; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .menu-item { padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; font-size: 14px; font-weight: 600; color: #1e293b; cursor: pointer; }
+        .menu-item:last-child { border-bottom: none; }
+        .menu-left { display: flex; align-items: center; gap: 12px; }
+
+        /* Bottom Navigation Bar */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-around; padding: 8px 0; z-index: 10; }
+        .nav-item { text-align: center; font-size: 11px; color: #94a3b8; cursor: pointer; flex: 1; }
+        .nav-item.active { color: #10b981; font-weight: bold; }
+        .nav-icon { font-size: 20px; display: block; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- User Header Profile -->
+    <div class="profile-header">
+        <div class="user-info-box">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" class="user-avatar" alt="Avatar">
+            <div class="user-details">
+                <h3>Dj Sakb <span style="color: #0284c7; font-size: 14px;">♂</span></h3>
+                <p class="user-id">ID: 2792504 <span class="id-copy" onclick="alert('ID কপি করা হয়েছে!')">📋</span></p>
+            </div>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-item">
+                <h4>0</h4>
+                <p>Following</p>
+            </div>
+            <div class="stat-item">
+                <h4>0</h4>
+                <p>Fan</p>
+            </div>
+            <div class="stat-item">
+                <h4>0</h4>
+                <p>Visitor</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wallet Section -->
+    <div class="wallet-card" onclick="alert('বিকাশ/নগদ ওয়ালেট খুলছে... (Personal: 01616261693)')">
+        <span class="wallet-title">Wallet</span>
+        <div class="wallet-balances">
+            <span class="coin">🟡 0</span>
+            <span class="diamond">💎 0</span>
+            <span style="color: #94a3b8;">❯</span>
+        </div>
+    </div>
+
+    <!-- Invite Friends Banner -->
+    <div class="invite-banner" onclick="alert('বন্ধুদের ইনভাইট করুন এবং রিওয়ার্ড জিতুন!')">
+        <span>🎁 Invite new users to earn money</span>
+        <span>➡️</span>
+    </div>
+
+    <!-- Level & VIP Options -->
+    <div class="level-vip-grid">
+        <div class="lvl-card" onclick="alert('Level Details')">
+            <span>Level</span>
+            <span>⭐</span>
+        </div>
+        <div class="vip-card" onclick="alert('VIP Pass Purchase')">
+            <span>VIP</span>
+            <span>👑</span>
+        </div>
+    </div>
+
+    <!-- Quick Features -->
+    <div class="quick-grid">
+        <div class="grid-item" onclick="alert('Mall Store')">
+            <span class="grid-icon">🛍️</span>
+            Mall
+        </div>
+        <div class="grid-item" onclick="alert('My Room')">
+            <span class="grid-icon">🏠</span>
+            Room
+        </div>
+        <div class="grid-item" onclick="alert('My Badges')">
+            <span class="grid-icon">🏅</span>
+            Badge
+        </div>
+    </div>
+
+    <!-- Settings & Options List -->
+    <div class="menu-list">
+        <div class="menu-item" onclick="alert('Celebrity Gifts List')">
+            <div class="menu-left">🎁 Celebrity Gifts</div>
+            <span>❯</span>
+        </div>
+        <div class="menu-item" onclick="alert('Family / Agency Group')">
+            <div class="menu-left">🏆 Family</div>
+            <span>❯</span>
+        </div>
+        <div class="menu-item" onclick="alert('Invite New Friends')">
+            <div class="menu-left">💬 Invite New</div>
+            <span>❯</span>
+        </div>
+        <div class="menu-item" onclick="alert('App Settings')">
+            <div class="menu-left">⚙️ Setting</div>
+            <span>❯</span>
+        </div>
+        <div class="menu-item" onclick="alert('Language Selection')">
+            <div class="menu-left">🌐 Language</div>
+            <span>❯</span>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <div class="nav-item">
+            <span class="nav-icon">🔥</span>
+            Home
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">🪐</span>
+            Discover
+        </div>
+        <div class="nav-item">
+            <span class="nav-icon">💬</span>
+            Message
+        </div>
+        <div class="nav-item active">
+            <span class="nav-icon">👤</span>
+            Me
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Wallet & Recharge</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #f8fafc; color: #0f172a; min-height: 100vh; display: flex; flex-direction: column; }
+
+        /* Top Header */
+        .top-bar { background: #ffffff; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 10; }
+        .back-btn { font-size: 18px; cursor: pointer; font-weight: bold; }
+
+        /* Wallet Tabs */
+        .wallet-tabs { display: flex; background: #e2e8f0; padding: 4px; border-radius: 25px; margin: 14px; }
+        .w-tab { flex: 1; text-align: center; padding: 10px; font-size: 14px; font-weight: bold; border-radius: 20px; cursor: pointer; color: #64748b; }
+        .w-tab.active { background: #ffffff; color: #0f172a; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+
+        /* Total Balance Card */
+        .balance-card { margin: 0 14px 14px 14px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 16px; padding: 20px; color: white; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3); position: relative; overflow: hidden; }
+        .balance-card h4 { font-size: 14px; opacity: 0.9; }
+        .balance-amount { font-size: 32px; font-weight: 900; margin-top: 5px; display: flex; align-items: center; gap: 8px; }
+
+        /* Mystery Chest Banner */
+        .mystery-banner { margin: 0 14px 14px 14px; background: linear-gradient(135deg, #059669, #047857); padding: 12px 16px; border-radius: 12px; color: white; display: flex; justify-content: space-between; align-items: center; font-size: 13px; font-weight: bold; cursor: pointer; box-shadow: 0 3px 8px rgba(5, 150, 105, 0.2); }
+
+        /* Recharge Packs Grid */
+        .section-title { font-size: 15px; font-weight: bold; margin: 0 14px 10px 14px; color: #334155; }
+        .packs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 14px 20px 14px; }
+        .pack-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 16px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.03); cursor: pointer; transition: 0.2s; }
+        .pack-card:active { transform: scale(0.97); border-color: #f59e0b; }
+        .pack-icon { font-size: 32px; margin-bottom: 6px; }
+        .pack-coins { font-size: 16px; font-weight: bold; color: #0f172a; }
+        .pack-price { margin-top: 8px; background: #fef3c7; color: #b45309; padding: 6px; border-radius: 8px; font-size: 14px; font-weight: bold; }
+
+        /* Payment Modal (bKash / Nagad) */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); justify-content: center; align-items: center; z-index: 100; padding: 20px; }
+        .modal-content { background: #ffffff; padding: 22px; border-radius: 18px; width: 100%; max-width: 360px; text-align: center; }
+        .pay-input { width: 100%; padding: 12px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 10px; margin: 12px 0; font-size: 15px; outline: none; }
+        .btn-confirm { background: #10b981; color: white; border: none; padding: 12px; width: 100%; border-radius: 10px; font-size: 15px; font-weight: bold; cursor: pointer; }
+        .btn-close { background: none; border: none; color: #ef4444; margin-top: 10px; font-size: 13px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="top-bar">
+        <span class="back-btn" onclick="history.back()">❮ Wallet</span>
+        <span style="font-size: 16px; font-weight: bold;">Recharge</span>
+        <span>📋</span>
+    </div>
+
+    <!-- Wallet Tabs -->
+    <div class="wallet-tabs">
+        <div class="w-tab active">Coins</div>
+        <div class="w-tab">Diamond</div>
+        <div class="w-tab">Debris</div>
+    </div>
+
+    <!-- My Coins Balance Card -->
+    <div class="balance-card">
+        <h4>My Coins total</h4>
+        <div class="balance-amount">
+            🟡 <span id="myCoins">0</span> 🔒
+        </div>
+    </div>
+
+    <!-- Mystery Chest Promo -->
+    <div class="mystery-banner" onclick="alert('Top up 2,000,000 Coins to unlock Mystery Chest!')">
+        <span>🎁 Top up 2M Coins to unlock Mystery Chest!</span>
+        <span>➡️</span>
+    </div>
+
+    <div class="section-title">Select Recharge Package (bKash / Nagad)</div>
+
+    <!-- Coin Packs Grid -->
+    <div class="packs-grid">
+        <div class="pack-card" onclick="openPayment('20,000 Coins', '৳ ১০০')">
+            <div class="pack-icon">🪙</div>
+            <div class="pack-coins">20,000</div>
+            <div class="pack-price">৳ ১০০ ($0.99)</div>
+        </div>
+        <div class="pack-card" onclick="openPayment('100,000 Coins', '৳ ৫০০')">
+            <div class="pack-icon">🪙</div>
+            <div class="pack-coins">100,000</div>
+            <div class="pack-price">৳ ৫০০ ($4.99)</div>
+        </div>
+        <div class="pack-card" onclick="openPayment('200,000 Coins', '৳ ১,০০০')">
+            <div class="pack-icon">💰</div>
+            <div class="pack-coins">200,000</div>
+            <div class="pack-price">৳ ১,০০০ ($9.99)</div>
+        </div>
+        <div class="pack-card" onclick="openPayment('500,000 Coins', '৳ ২,৫০০')">
+            <div class="pack-icon">💎</div>
+            <div class="pack-coins">500,000</div>
+            <div class="pack-price">৳ ২,৫০০ ($24.99)</div>
+        </div>
+    </div>
+
+    <!-- Manual bKash / Nagad Payment Modal -->
+    <div class="modal" id="payModal">
+        <div class="modal-content">
+            <h3 style="color: #0f172a; margin-bottom: 6px;" id="selectedPackage">Package</h3>
+            <p style="font-size: 13px; color: #64748b; margin-bottom: 12px;">সেন্ড মানি করুন (bKash / Nagad): <br><b style="color: #0284c7; font-size: 16px;">01616261693</b> (Personal)</p>
+            
+            <input type="text" id="trxId" class="pay-input" placeholder="আপনার Transaction ID (TrxID) লিখুন">
+            <button class="btn-confirm" onclick="verifyAndAdd()">পেমেন্ট কনফার্ম করুন</button>
+            <br>
+            <button class="btn-close" onclick="closePayment()">বন্ধ করুন</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPack = '';
+        let totalCoins = 0;
+
+        function openPayment(packName, price) {
+            currentPack = packName;
+            document.getElementById('selectedPackage').innerText = packName + " (" + price + ")";
+            document.getElementById('payModal').style.display = 'flex';
+        }
+
+        function closePayment() {
+            document.getElementById('payModal').style.display = 'none';
+        }
+
+        function verifyAndAdd() {
+            let trx = document.getElementById('trxId').value;
+            if(!trx.trim()) {
+                alert('অনুগ্রহ করে সঠিক Transaction ID লিখুন!');
+                return;
+            }
+            
+            // Add coins based on selection for demo
+            if(currentPack.includes('20,000')) totalCoins += 20000;
+            else if(currentPack.includes('100,000')) totalCoins += 100000;
+            else if(currentPack.includes('200,000')) totalCoins += 200000;
+            else totalCoins += 500000;
+
+            document.getElementById('myCoins').innerText = totalCoins.toLocaleString();
+            alert('পেমেন্ট সফলভাবে সাবমিট হয়েছে! অ্যাডমিন যাচাই করে আপনার কয়েন যুক্ত করে দেবেন।');
+            document.getElementById('trxId').value = '';
+            closePayment();
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Live Voice Room</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%); 
+            color: #ffffff; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            padding: 12px;
+            overflow: hidden;
+        }
+
+        /* Top Header */
+        .room-header { display: flex; justify-content: space-between; align-items: center; padding-top: 8px; }
+        .host-info { display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.15); padding: 4px 10px 4px 4px; border-radius: 20px; backdrop-filter: blur(5px); }
+        .host-avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #fbbf24; object-fit: cover; }
+        .host-title { font-size: 13px; font-weight: bold; }
+        .host-id { font-size: 10px; opacity: 0.8; }
+        .btn-exit { background: #ef4444; color: white; border: none; padding: 6px 14px; border-radius: 18px; font-size: 12px; font-weight: bold; cursor: pointer; }
+
+        /* 9-Seat Grid Area */
+        .seats-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 10px; text-align: center; }
+        .seat-box { display: flex; flex-direction: column; align-items: center; gap: 4px; position: relative; }
+        .seat-avatar { width: 62px; height: 62px; border-radius: 50%; border: 2px dashed #475569; background: rgba(255, 255, 255, 0.05); display: flex; justify-content: center; align-items: center; font-size: 20px; cursor: pointer; position: relative; }
+        .seat-avatar.active { border: 2px solid #10b981; }
+        .seat-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .mic-badge { position: absolute; bottom: 0; right: 0; background: #10b981; color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; display: flex; justify-content: center; align-items: center; border: 1px solid #0f172a; }
+        .seat-name { font-size: 11px; font-weight: 600; color: #cbd5e1; max-width: 70px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* Live Chat Box Area */
+        .chat-area { flex: 1; background: rgba(0, 0, 0, 0.25); border-radius: 12px; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+        .chat-item { font-size: 12px; background: rgba(255, 255, 255, 0.08); padding: 6px 10px; border-radius: 10px; line-height: 1.4; }
+        .chat-user { color: #38bdf8; font-weight: bold; margin-right: 4px; }
+        .chat-gift { color: #fde047; font-weight: bold; }
+
+        /* Bottom Controls Bar */
+        .bottom-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+        .chat-input { flex: 1; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 10px 14px; color: white; font-size: 13px; outline: none; }
+        .btn-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: none; color: white; font-size: 18px; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+        .btn-gift { background: linear-gradient(135deg, #f59e0b, #ec4899); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4); }
+
+        /* Gift Modal Popup */
+        .gift-modal { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: #1e293b; border-radius: 20px 20px 0 0; padding: 16px; z-index: 100; border-top: 1px solid #334155; }
+        .modal-title { font-size: 14px; font-weight: bold; color: #cbd5e1; margin-bottom: 12px; display: flex; justify-content: space-between; }
+        .gift-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
+        .gift-card { background: #0f172a; border: 1px solid #334155; border-radius: 12px; padding: 10px 4px; text-align: center; cursor: pointer; }
+        .gift-card:active { border-color: #f59e0b; background: #1e1b4b; }
+        .gift-icon { font-size: 28px; margin-bottom: 4px; }
+        .gift-name { font-size: 11px; font-weight: bold; }
+        .gift-price { font-size: 10px; color: #fbbf24; margin-top: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- Room Top Header -->
+    <div class="room-header">
+        <div class="host-info">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" class="host-avatar" alt="Host">
+            <div>
+                <div class="host-title">বগুড়ার কিং 👑</div>
+                <div class="host-id">ID: 2792504</div>
+            </div>
+        </div>
+        <button class="btn-exit" onclick="alert('লাইভ রুম থেকে বের হয়ে গেছেন')">Exit</button>
+    </div>
+
+    <!-- 9-Seat Mic Grid -->
+    <div class="seats-container">
+        <!-- Seat 1 (Host) -->
+        <div class="seat-box">
+            <div class="seat-avatar active">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Seat 1">
+                <div class="mic-badge">🎙️</div>
+            </div>
+            <span class="seat-name">1. Host</span>
+        </div>
+        <!-- Seat 2 -->
+        <div class="seat-box">
+            <div class="seat-avatar active">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Seat 2">
+                <div class="mic-badge">🎙️</div>
+            </div>
+            <span class="seat-name">2. নিঝুম</span>
+        </div>
+        <!-- Seat 3 -->
+        <div class="seat-box">
+            <div class="seat-avatar active">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Seat 3">
+                <div class="mic-badge">🎙️</div>
+            </div>
+            <span class="seat-name">3. Dj Sakb</span>
+        </div>
+
+        <!-- Empty Seats (4 to 9) -->
+        <div class="seat-box" onclick="takeSeat(4)">
+            <div class="seat-avatar">➕</div>
+            <span class="seat-name">4. Empty</span>
+        </div>
+        <div class="seat-box" onclick="takeSeat(5)">
+            <div class="seat-avatar">➕</div>
+            <span class="seat-name">5. Empty</span>
+        </div>
+        <div class="seat-box" onclick="takeSeat(6)">
+            <div class="seat-avatar">➕</div>
+            <span class="seat-name">6. Empty</span>
+        </div>
+        <div class="seat-box" onclick="takeSeat(7)">
+            <div class="seat-avatar">➕</div>
+            <span class="seat-name">7. Empty</span>
+        </div>
+        <div class="seat-box" onclick="takeSeat(8)">
+            <div class="seat-avatar">➕</div>
+            <span class="seat-name">8. Empty</span>
+        </div>
+        <div class="seat-box" onclick="takeSeat(9)">
+            <div class="seat-avatar">➕</div>
+            <span class="seat-name">9. Empty</span>
+        </div>
+    </div>
+
+    <!-- Live Chat Container -->
+    <div class="chat-area" id="chatArea">
+        <div class="chat-item"><span class="chat-user">System:</span> TakaLive Pro লাইভ রুমে স্বাগতম! কোনো প্রকার অশ্লীল আচরণ নিষিদ্ধ।</div>
+        <div class="chat-item"><span class="chat-user">বগুড়ার কিং:</span> সবাইকে আজকের লাইভে স্বাগতম! 🌹</div>
+        <div class="chat-item"><span class="chat-user">নিঝুম:</span> ধন্যবাদ ভাইয়া, কেমন আছেন?</div>
+    </div>
+
+    <!-- Bottom Action Controls -->
+    <div class="bottom-controls">
+        <input type="text" id="msgInput" class="chat-input" placeholder="Say something..." onkeypress="handleKeyPress(event)">
+        <button class="btn-icon" onclick="toggleMic()" id="micBtn">🎙️</button>
+        <button class="btn-icon btn-gift" onclick="openGiftModal()">🎁</button>
+    </div>
+
+    <!-- Virtual Gift Box Modal -->
+    <div class="gift-modal" id="giftModal">
+        <div class="modal-title">
+            <span>Send Virtual Gift (Balance: 🪙 5,000)</span>
+            <span style="cursor: pointer;" onclick="closeGiftModal()">✖</span>
+        </div>
+        <div class="gift-grid">
+            <div class="gift-card" onclick="sendGift('Rose 🌹', 10)">
+                <div class="gift-icon">🌹</div>
+                <div class="gift-name">Rose</div>
+                <div class="gift-price">🪙 10</div>
+            </div>
+            <div class="gift-card" onclick="sendGift('Heart 💖', 50)">
+                <div class="gift-icon">💖</div>
+                <div class="gift-name">Heart</div>
+                <div class="gift-price">🪙 50</div>
+            </div>
+            <div class="gift-card" onclick="sendGift('Sports Car 🏎️', 500)">
+                <div class="gift-icon">🏎️</div>
+                <div class="gift-name">Car</div>
+                <div class="gift-price">🪙 500</div>
+            </div>
+            <div class="gift-card" onclick="sendGift('Lion 🦁', 2000)">
+                <div class="gift-icon">🦁</div>
+                <div class="gift-name">Lion</div>
+                <div class="gift-price">🪙 2,000</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let isMicOn = true;
+
+        function toggleMic() {
+            isMicOn = !isMicOn;
+            document.getElementById('micBtn').innerText = isMicOn ? '🎙️' : '🔇';
+            alert(isMicOn ? 'মাইক্রোফোন অন করা হয়েছে' : 'মাইক্রোফোন মিউট করা হয়েছে');
+        }
+
+        function takeSeat(seatNum) {
+            alert(seatNum + ' নম্বর সিটে বসার জন্য হোস্টের কাছে রিকোয়েস্ট পাঠানো হয়েছে!');
+        }
+
+        function openGiftModal() {
+            document.getElementById('giftModal').style.display = 'block';
+        }
+
+        function closeGiftModal() {
+            document.getElementById('giftModal').style.display = 'none';
+        }
+
+        function sendGift(giftName, price) {
+            let chatBox = document.getElementById('chatArea');
+            chatBox.innerHTML += `<div class="chat-item"><span class="chat-user">Dj Sakb</span> sent <span class="chat-gift">${giftName}</span> to Host!</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+            closeGiftModal();
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                let text = document.getElementById('msgInput').value;
+                if (text.trim()) {
+                    let chatBox = document.getElementById('chatArea');
+                    chatBox.innerHTML += `<div class="chat-item"><span class="chat-user">Dj Sakb:</span> ${text}</div>`;
+                    document.getElementById('msgInput').value = '';
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Lucky Gifting Room</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: linear-gradient(180deg, #0f172a 0%, #311042 100%); 
+            color: #ffffff; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            padding: 12px;
+            overflow: hidden;
+        }
+
+        /* Top Header */
+        .room-header { display: flex; justify-content: space-between; align-items: center; padding-top: 8px; }
+        .host-info { display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.15); padding: 4px 10px 4px 4px; border-radius: 20px; backdrop-filter: blur(5px); }
+        .host-avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #fbbf24; object-fit: cover; }
+        .host-title { font-size: 13px; font-weight: bold; }
+        .btn-exit { background: #ef4444; color: white; border: none; padding: 6px 14px; border-radius: 18px; font-size: 12px; font-weight: bold; cursor: pointer; }
+
+        /* Lucky Winner Announcement Banner */
+        .lucky-banner { background: linear-gradient(135deg, #f59e0b, #ef4444); color: white; padding: 6px 12px; border-radius: 10px; font-size: 12px; font-weight: bold; text-align: center; margin-top: 8px; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 0.8; } 50% { opacity: 1; transform: scale(1.02); } 100% { opacity: 0.8; } }
+
+        /* 9-Seat Grid Area */
+        .seats-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 10px 6px; text-align: center; }
+        .seat-box { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .seat-avatar { width: 56px; height: 56px; border-radius: 50%; border: 2px solid #10b981; background: rgba(255, 255, 255, 0.05); display: flex; justify-content: center; align-items: center; position: relative; }
+        .seat-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .seat-name { font-size: 11px; font-weight: 600; color: #cbd5e1; }
+
+        /* Live Chat Box Area */
+        .chat-area { flex: 1; background: rgba(0, 0, 0, 0.3); border-radius: 12px; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+        .chat-item { font-size: 12px; background: rgba(255, 255, 255, 0.08); padding: 6px 10px; border-radius: 10px; line-height: 1.4; }
+        .chat-user { color: #38bdf8; font-weight: bold; margin-right: 4px; }
+        .lucky-win { color: #fde047; font-weight: bold; background: rgba(245, 158, 11, 0.2); padding: 2px 6px; border-radius: 6px; display: inline-block; margin-top: 3px; }
+
+        /* Bottom Controls Bar */
+        .bottom-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+        .chat-input { flex: 1; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 10px 14px; color: white; font-size: 13px; outline: none; }
+        .btn-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: none; color: white; font-size: 18px; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+        .btn-gift { background: linear-gradient(135deg, #f59e0b, #ec4899); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4); }
+
+        /* Lucky Gift Modal Popup */
+        .gift-modal { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: #1e293b; border-radius: 20px 20px 0 0; padding: 16px; z-index: 100; border-top: 1px solid #334155; }
+        .modal-title { font-size: 14px; font-weight: bold; color: #cbd5e1; margin-bottom: 12px; display: flex; justify-content: space-between; }
+        .gift-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 12px; }
+        .gift-card { background: #0f172a; border: 1px solid #f59e0b; border-radius: 12px; padding: 10px 4px; text-align: center; cursor: pointer; position: relative; }
+        .gift-card:active { background: #311042; }
+        .lucky-badge { position: absolute; top: -6px; right: -4px; background: #ef4444; color: white; font-size: 9px; padding: 1px 4px; border-radius: 6px; font-weight: bold; }
+        .gift-icon { font-size: 28px; margin-bottom: 4px; }
+        .gift-name { font-size: 11px; font-weight: bold; }
+        .gift-price { font-size: 10px; color: #fbbf24; margin-top: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- Room Top Header -->
+    <div class="room-header">
+        <div class="host-info">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" class="host-avatar" alt="Host">
+            <div>
+                <div class="host-title">বগুড়ার কিং 👑</div>
+                <div style="font-size: 10px; opacity: 0.8;">ID: 2792504</div>
+            </div>
+        </div>
+        <button class="btn-exit" onclick="alert('রুম থেকে বের হয়ে গেছেন')">Exit</button>
+    </div>
+
+    <!-- Lucky Win Announcement Banner -->
+    <div class="lucky-banner" id="luckyBanner">
+        🎉 অভিনন্দন! লাকি গিফট পাঠিয়ে জিতে নিন ১০x থেকে ১০০০x পর্যন্ত কয়েন ব্যাক!
+    </div>
+
+    <!-- 9-Seat Mic Grid (Sample) -->
+    <div class="seats-container">
+        <div class="seat-box">
+            <div class="seat-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100"></div>
+            <span class="seat-name">1. Host</span>
+        </div>
+        <div class="seat-box">
+            <div class="seat-avatar"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100"></div>
+            <span class="seat-name">2. নিঝুম</span>
+        </div>
+        <div class="seat-box">
+            <div class="seat-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100"></div>
+            <span class="seat-name">3. Dj Sakb</span>
+        </div>
+    </div>
+
+    <!-- Live Chat Container -->
+    <div class="chat-area" id="chatArea">
+        <div class="chat-item"><span class="chat-user">System:</span> লাকি গিফট (Lucky Gift) পাঠিয়ে ইনস্ট্যান্ট কয়েন ব্যাক জেতার সুযোগ চলছে!</div>
+        <div class="chat-item"><span class="chat-user">নিঝুম:</span> সবাই লাকি রিং গিফট পাঠান! 💍</div>
+    </div>
+
+    <!-- Bottom Action Controls -->
+    <div class="bottom-controls">
+        <input type="text" id="msgInput" class="chat-input" placeholder="Say something..." onkeypress="handleKeyPress(event)">
+        <button class="btn-icon" onclick="alert('মাইক্রোফোন অন/অফ')">🎙️</button>
+        <button class="btn-icon btn-gift" onclick="openGiftModal()">🎁</button>
+    </div>
+
+    <!-- Lucky Gift Modal -->
+    <div class="gift-modal" id="giftModal">
+        <div class="modal-title">
+            <span>Lucky Gifts (Coin Back System)</span>
+            <span style="cursor: pointer;" onclick="closeGiftModal()">✖</span>
+        </div>
+        <div class="gift-grid">
+            <div class="gift-card" onclick="sendLuckyGift('Lucky Rose 🌹', 100)">
+                <span class="lucky-badge">10x</span>
+                <div class="gift-icon">🌹</div>
+                <div class="gift-name">Lucky Rose</div>
+                <div class="gift-price">🪙 100</div>
+            </div>
+            <div class="gift-card" onclick="sendLuckyGift('Lucky Ring 💍', 500)">
+                <span class="lucky-badge">50x</span>
+                <div class="gift-icon">💍</div>
+                <div class="gift-name">Lucky Ring</div>
+                <div class="gift-price">🪙 500</div>
+            </div>
+            <div class="gift-card" onclick="sendLuckyGift('Super Car 🏎️', 2000)">
+                <span class="lucky-badge">100x</span>
+                <div class="gift-icon">🏎️</div>
+                <div class="gift-name">Super Car</div>
+                <div class="gift-price">🪙 2,000</div>
+            </div>
+            <div class="gift-card" onclick="sendLuckyGift('Magic Lion 🦁', 10000)">
+                <span class="lucky-badge">1000x</span>
+                <div class="gift-icon">🦁</div>
+                <div class="gift-name">Magic Lion</div>
+                <div class="gift-price">🪙 10,000</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openGiftModal() {
+            document.getElementById('giftModal').style.display = 'block';
+        }
+
+        function closeGiftModal() {
+            document.getElementById('giftModal').style.display = 'none';
+        }
+
+        function sendLuckyGift(giftName, price) {
+            let chatBox = document.getElementById('chatArea');
+            
+            // Random Lucky Multiplier simulation (10x, 50x, 100x, 1000x or 0)
+            let multipliers = [10, 50, 100, 1000, 0, 0];
+            let randomMult = multipliers[Math.floor(Math.random() * multipliers.length)];
+            
+            if(randomMult > 0) {
+                let wonCoins = price * randomMult;
+                chatBox.innerHTML += `<div class="chat-item"><span class="chat-user">Dj Sakb</span> sent <span style="color:#f59e0b">${giftName}</span>! <br><span class="lucky-win">✨ অসাধারণ! লাকি ড্রতে ${randomMult}X পেয়ে আপনি ${wonCoins.toLocaleString()} কয়েন জিতে নিয়েছেন!</span></div>`;
+                document.getElementById('luckyBanner').innerText = `🎉 ভাগ্য সুপ্রসন্ন! Dj Sakb ${wonCoins.toLocaleString()} কয়েন জিতেছেন!`;
+            } else {
+                chatBox.innerHTML += `<div class="chat-item"><span class="chat-user">Dj Sakb</span> sent <span style="color:#f59e0b">${giftName}</span> to Host!</div>`;
+            }
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+            closeGiftModal();
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                let text = document.getElementById('msgInput').value;
+                if (text.trim()) {
+                    let chatBox = document.getElementById('chatArea');
+                    chatBox.innerHTML += `<div class="chat-item"><span class="chat-user">Dj Sakb:</span> ${text}</div>`;
+                    document.getElementById('msgInput').value = '';
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Massive Gifting System</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%); 
+            color: #ffffff; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            padding: 12px;
+            overflow: hidden;
+        }
+
+        /* Room Top Header */
+        .room-header { display: flex; justify-content: space-between; align-items: center; padding-top: 8px; }
+        .host-info { display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.15); padding: 4px 10px 4px 4px; border-radius: 20px; }
+        .host-avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #fbbf24; object-fit: cover; }
+        .btn-exit { background: #ef4444; color: white; border: none; padding: 6px 14px; border-radius: 18px; font-size: 12px; font-weight: bold; cursor: pointer; }
+
+        /* Chat Area */
+        .chat-area { flex: 1; background: rgba(0, 0, 0, 0.3); border-radius: 12px; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+        .chat-item { font-size: 12px; background: rgba(255, 255, 255, 0.08); padding: 6px 10px; border-radius: 10px; line-height: 1.4; }
+        .chat-user { color: #38bdf8; font-weight: bold; margin-right: 4px; }
+        .big-gift-alert { color: #fde047; font-weight: bold; background: rgba(239, 68, 68, 0.25); border: 1px solid #ef4444; padding: 4px 8px; border-radius: 8px; display: block; margin-top: 4px; }
+
+        /* Bottom Controls */
+        .bottom-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+        .chat-input { flex: 1; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 10px 14px; color: white; font-size: 13px; outline: none; }
+        .btn-gift { background: linear-gradient(135deg, #f59e0b, #ec4899); border: none; color: white; padding: 10px 20px; border-radius: 20px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4); }
+
+        /* Massive Gifting Modal */
+        .gift-modal { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: #0f172a; border-radius: 22px 22px 0 0; padding: 16px; z-index: 100; border-top: 2px solid #334155; max-height: 75vh; display: none; flex-direction: column; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 14px; font-weight: bold; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        .wallet-display { color: #f59e0b; display: flex; align-items: center; gap: 4px; }
+        
+        /* Category Tabs */
+        .gift-tabs { display: flex; gap: 8px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 4px; }
+        .g-tab { background: #1e293b; border: 1px solid #475569; padding: 6px 12px; border-radius: 15px; font-size: 12px; font-weight: bold; cursor: pointer; white-space: nowrap; color: #94a3b8; }
+        .g-tab.active { background: #f59e0b; color: #0f172a; border-color: #f59e0b; }
+
+        /* Gift Items Grid */
+        .gift-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; overflow-y: auto; max-height: 280px; padding-right: 4px; }
+        .gift-card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 10px 4px; text-align: center; cursor: pointer; position: relative; transition: 0.15s; }
+        .gift-card:active { transform: scale(0.95); border-color: #f59e0b; background: #311042; }
+        .badge-type { position: absolute; top: -5px; right: -2px; font-size: 8px; padding: 1px 4px; border-radius: 6px; font-weight: bold; }
+        .cp-badge { background: #ec4899; color: white; }
+        .luxury-badge { background: #eab308; color: #0f172a; }
+        
+        .gift-icon { font-size: 30px; margin-bottom: 4px; }
+        .gift-name { font-size: 11px; font-weight: bold; color: #f8fafc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .gift-price { font-size: 10px; color: #fbbf24; margin-top: 2px; }
+
+        /* Send Footer */
+        .gift-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; border-top: 1px solid #334155; padding-top: 10px; }
+        .btn-send-final { background: linear-gradient(135deg, #10b981, #059669); color: white; border: none; padding: 8px 24px; border-radius: 18px; font-weight: bold; font-size: 14px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <!-- Room Top Header -->
+    <div class="room-header">
+        <div class="host-info">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" class="host-avatar" alt="Host">
+            <div>
+                <div style="font-size: 13px; font-weight: bold;">বগুড়ার কিং 👑</div>
+                <div style="font-size: 10px; opacity: 0.8;">ID: 2792504</div>
+            </div>
+        </div>
+        <button class="btn-exit" onclick="alert('রুম থেকে বের হয়ে গেছেন')">Exit</button>
+    </div>
+
+    <!-- Live Chat Container -->
+    <div class="chat-area" id="chatArea">
+        <div class="chat-item"><span class="chat-user">System:</span> TakaLive Pro লাকি ও লাক্সারি গিফটিং সিস্টেমে স্বাগতম! হাজার থেকে লাখ কয়েনের গিফট পাঠান।</div>
+    </div>
+
+    <!-- Bottom Action Controls -->
+    <div class="bottom-controls">
+        <input type="text" id="msgInput" class="chat-input" placeholder="Say something..." onkeypress="handleKeyPress(event)">
+        <button class="btn-gift" onclick="openGiftModal()">🎁 Gift Shop</button>
+    </div>
+
+    <!-- Massive Gifting Modal -->
+    <div class="gift-modal" id="giftModal" style="display: none;">
+        <div class="modal-header">
+            <span>🎁 TakaLive Gift Store</span>
+            <div class="wallet-display">
+                <span>🪙</span> <span id="userCoins">500,000</span>
+                <span style="cursor: pointer; margin-left: 10px; color: #ef4444;" onclick="closeGiftModal()">✖</span>
+            </div>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="gift-tabs">
+            <div class="g-tab active" onclick="filterGifts('all')">All Gifts</div>
+            <div class="g-tab" onclick="filterGifts('cp')">💖 CP Gifts</div>
+            <div class="g-tab" onclick="filterGifts('friendship')">🤝 Friendship</div>
+            <div class="g-tab" onclick="filterGifts('luxury')">👑 Luxury (1M+)</div>
+            <div class="g-tab" onclick="filterGifts('lucky')">✨ Lucky 1000x</div>
+        </div>
+
+        <!-- Gift Grid Container -->
+        <div class="gift-grid" id="giftGrid">
+            <!-- All items will be loaded dynamically via JS -->
+        </div>
+
+        <!-- Footer Action -->
+        <div class="gift-footer">
+            <span style="font-size: 12px; color: #94a3b8;" id="selectedGiftText">একটি গিফট সিলেক্ট করুন</span>
+            <button class="btn-send-final" onclick="sendSelectedGift()">Send Gift 🚀</button>
+        </div>
+    </div>
+
+    <script>
+        // Database of Massive Gifts (CP, Friendship, Luxury, Lucky)
+        const giftsData = [
+            { id: 1, name: "Rose 🌹", price: 10, type: "friendship", icon: "🌹", badge: "" },
+            { id: 2, name: "Bestie Hand 🤝", price: 100, type: "friendship", icon: "🤝", badge: "Friend" },
+            { id: 3, name: "CP Ring 💍", price: 999, type: "cp", icon: "💍", badge: "CP" },
+            { id: 4, name: "Soulmate Crown 👑", price: 5200, type: "cp", icon: "👑", badge: "CP" },
+            { id: 5, name: "Lucky Diamond 💎", price: 10000, type: "lucky", icon: "💎", badge: "1000x" },
+            { id: 6, name: "Sports Car 🏎️", price: 25000, type: "luxury", icon: "🏎️", badge: "Luxury" },
+            { id: 7, name: "Magic Lion 🦁", price: 50000, type: "lucky", icon: "🦁", badge: "Lucky" },
+            { id: 8, name: "Golden Castle 🏰", price: 100000, type: "luxury", icon: "🏰", badge: "100K" },
+            { id: 9, name: "Private Jet ✈️", price: 500000, type: "luxury", icon: "✈️", badge: "500K" },
+            { id: 10, name: "TakaLive Empire 🌟", price: 1000000, type: "luxury", icon: "🌟", badge: "1M Coins" }
+        ];
+
+        let selectedGift = null;
+        let myCoins = 500000;
+
+        function openGiftModal() {
+            document.getElementById('giftModal').style.display = 'flex';
+            filterGifts('all');
+        }
+
+        function closeGiftModal() {
+            document.getElementById('giftModal').style.display = 'none';
+        }
+
+        function filterGifts(category) {
+            // Highlight active tab
+            let tabs = document.querySelectorAll('.g-tab');
+            tabs.forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+
+            let grid = document.getElementById('giftGrid');
+            grid.innerHTML = '';
+
+            let filtered = category === 'all' ? giftsData : giftsData.filter(g => g.type === category);
+
+            filtered.forEach(gift => {
+                let badgeHtml = gift.badge ? `<span class="badge-type ${gift.type === 'cp' ? 'cp-badge' : 'luxury-badge'}">${gift.badge}</span>` : '';
+                let card = document.createElement('div');
+                card.className = 'gift-card';
+                card.innerHTML = `
+                    ${badgeHtml}
+                    <div class="gift-icon">${gift.icon}</div>
+                    <div class="gift-name">${gift.name}</div>
+                    <div class="gift-price">🪙 ${gift.price.toLocaleString()}</div>
+                `;
+                card.onclick = () => selectGift(gift);
+                grid.appendChild(card);
+            });
+        }
+
+        function selectGift(gift) {
+            selectedGift = gift;
+            document.getElementById('selectedGiftTextinnerHTML').innerText = `সিলেক্টেড: ${gift.name} (🪙 ${gift.price.toLocaleString()})`;
+        }
+
+        function sendSelectedGift() {
+            if(!selectedGift) {
+                alert('দয়া করে প্রথমে যেকোনো একটি গিফট সিলেক্ট করুন!');
+                return;
+            }
+            if(myCoins < selectedGift.price) {
+                alert('আপনার ওয়ালেটে পর্যাপ্ত কয়েন নেই! দয়া করে কয়েন রিচার্জ করুন।');
+                return;
+            }
+
+            myCoins -= selectedGift.price;
+            document.getElementById('userCoins').innerText = myCoins.toLocaleString();
+
+            let chatBox = document.getElementById('chatArea');
+            chatBox.innerHTML += `
+                <div class="chat-item">
+                    <span class="chat-user">Dj Sakb</span> sent a massive gift!
+                    <span class="big-gift-alert">👑 ${selectedGift.icon} ${selectedGift.name} (${selectedGift.price.toLocaleString()} Coins) পাঠানো হয়েছে হোস্টকে!</span>
+                </div>
+            `;
+            chatBox.scrollTop = chatBox.scrollHeight;
+            closeGiftModal();
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') {
+                let text = document.getElementById('msgInput').value;
+                if (text.trim()) {
+                    let chatBox = document.getElementById('chatArea');
+                    chatBox.innerHTML += `<div class="chat-item"><span class="chat-user">Dj Sakb:</span> ${text}</div>`;
+                    document.getElementById('msgInput').value = '';
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Live Audio Room</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%); 
+            color: #ffffff; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            padding: 12px;
+            overflow: hidden;
+        }
+
+        /* Top Header */
+        .room-header { display: flex; justify-content: space-between; align-items: center; padding-top: 6px; }
+        .host-pill { display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.15); padding: 4px 12px 4px 4px; border-radius: 25px; backdrop-filter: blur(5px); }
+        .host-avatar { width: 36px; height: 36px; border-radius: 50%; border: 2px solid #fbbf24; object-fit: cover; }
+        .host-info { display: flex; flex-direction: column; }
+        .host-title { font-size: 13px; font-weight: bold; color: #f8fafc; }
+        .host-id { font-size: 10px; color: #cbd5e1; }
+        .btn-exit { background: #ef4444; color: white; border: none; padding: 6px 14px; border-radius: 18px; font-size: 12px; font-weight: bold; cursor: pointer; }
+
+        /* 9-Seat Grid Area */
+        .seats-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 15px 8px; text-align: center; }
+        .seat-box { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+        .seat-circle { width: 60px; height: 60px; border-radius: 50%; border: 2px dashed #475569; background: rgba(255, 255, 255, 0.05); display: flex; justify-content: center; align-items: center; font-size: 20px; cursor: pointer; position: relative; }
+        .seat-circle.active { border: 2px solid #10b981; }
+        .seat-circle img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        .mic-icon-badge { position: absolute; bottom: 0; right: 0; background: #10b981; color: white; width: 18px; height: 18px; border-radius: 50%; font-size: 10px; display: flex; justify-content: center; align-items: center; border: 1px solid #0f172a; }
+        .seat-name { font-size: 11px; font-weight: 600; color: #cbd5e1; max-width: 75px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* Live Chat Box Area */
+        .chat-area { flex: 1; background: rgba(0, 0, 0, 0.3); border-radius: 14px; padding: 10px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; }
+        .chat-item { font-size: 12px; background: rgba(255, 255, 255, 0.08); padding: 6px 10px; border-radius: 10px; line-height: 1.4; }
+        .chat-user { color: #38bdf8; font-weight: bold; margin-right: 4px; }
+
+        /* Bottom Controls Bar */
+        .bottom-controls { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+        .chat-input { flex: 1; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px; padding: 10px 14px; color: white; font-size: 13px; outline: none; }
+        .btn-ctrl { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.15); border: none; color: white; font-size: 18px; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+        .btn-gift-main { background: linear-gradient(135deg, #f59e0b, #ec4899); box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4); border: none; color: white; padding: 0 16px; border-radius: 20px; font-weight: bold; font-size: 13px; height: 40px; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+    </style>
+</head>
+<body>
+
+    <!-- Room Header -->
+    <div class="room-header">
+        <div class="host-pill">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" class="host-avatar" alt="Host">
+            <div class="host-info">
+                <span class="host-title">বগুড়ার কিং 👑</span>
+                <span class="host-id">ID: 2792504</span>
+            </div>
+        </div>
+        <button class="btn-exit" onclick="alert('লাইভ রুম থেকে বের হয়ে গেছেন!')">Exit</button>
+    </div>
+
+    <!-- 9-Seat Voice Grid -->
+    <div class="seats-container">
+        <!-- Seat 1 (Host) -->
+        <div class="seat-box">
+            <div class="seat-circle active">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Host">
+                <div class="mic-icon-badge">🎙️</div>
+            </div>
+            <span class="seat-name">1. Host</span>
+        </div>
+        <!-- Seat 2 -->
+        <div class="seat-box">
+            <div class="seat-circle active">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Speaker">
+                <div class="mic-icon-badge">🎙️</div>
+            </div>
+            <span class="seat-name">2. নিঝুম</span>
+        </div>
+        <!-- Seat 3 -->
+        <div class="seat-box">
+            <div class="seat-circle active">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Speaker">
+                <div class="mic-icon-badge">🎙️</div>
+            </div>
+            <span class="seat-name">3. Dj Sakb</span>
+        </div>
+
+        <!-- Seats 4 to 9 (Empty / Click to take seat) -->
+        <div class="seat-box" onclick="requestSeat(4)">
+            <div class="seat-circle">➕</div>
+            <span class="seat-name">4. Empty</span>
+        </div>
+        <div class="seat-box" onclick="requestSeat(5)">
+            <div class="seat-circle">➕</div>
+            <span class="seat-name">5. Empty</span>
+        </div>
+        <div class="seat-box" onclick="requestSeat(6)">
+            <div class="seat-circle">➕</div>
+            <span class="seat-name">6. Empty</span>
+        </div>
+        <div class="seat-box" onclick="requestSeat(7)">
+            <div class="seat-circle">➕</div>
+            <span class="seat-name">7. Empty</span>
+        </div>
+        <div class="seat-box" onclick="requestSeat(8)">
+            <div class="seat-circle">➕</div>
+            <span class="seat-name">8. Empty</span>
+        </div>
+        <div class="seat-box" onclick="requestSeat(9)">
+            <div class="seat-circle">➕</div>
+            <span class="seat-name">9. Empty</span>
+        </div>
+    </div>
+
+    <!-- Live Chat Container -->
+    <div class="chat-area" id="chatArea">
+        <div class="chat-item"><span class="chat-user">System:</span> TakaLive Pro লাইভ রুমে স্বাগতম! শালীনতা বজায় রাখুন।</div>
+        <div class="chat-item"><span class="chat-user">বগুড়ার কিং:</span> সবাইকে আজকের অডিও আড্ডায় স্বাগতম! 🌹</div>
+        <div class="chat-item"><span class="chat-user">নিঝুম:</span> দারুণ গান চলছে ভাইয়া!</div>
+    </div>
+
+    <!-- Bottom Action Controls -->
+    <div class="bottom-controls">
+        <input type="text" id="msgInput" class="chat-input" placeholder="Say something..." onkeypress="handleKeyPress(event)">
+        <button class="btn-ctrl" onclick="toggleMic()" id="micBtn">🎙️</button>
+        <button class="btn-gift-main" onclick="alert('গিফট শপ ওপেন করা হচ্ছে...')">🎁 Gift</button>
+    </div>
+
+    <script>
+        let isMicOn = true;
+
+        function toggleMic() {
+            isMicOn = !isMicOn;
+            document.getElementById('micBtn').innerText = isMicOn ? '🎙️' : '🔇';
+            alert(isMicOn ? 'মাইক্রোফোন অন করা হয়েছে' : 'মাইক্রোফোন
+            <!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Create Room / Go Live</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: linear-gradient(135deg, #0f172a, #1e1b4b, #311042); 
+            color: #ffffff; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: space-between; 
+            padding: 20px;
+        }
+
+        /* Top Bar */
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .back-btn { font-size: 18px; cursor: pointer; font-weight: bold; color: #cbd5e1; background: none; border: none; }
+        .page-title { font-size: 16px; font-weight: bold; color: #f8fafc; }
+
+        /* Form Container */
+        .form-container { display: flex; flex-direction: column; gap: 20px; max-width: 400px; width: 100%; margin: 0 auto; flex: 1; }
+
+        /* Room Cover Photo Upload Box */
+        .cover-upload { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 2px dashed #475569; 
+            border-radius: 16px; 
+            height: 150px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            cursor: pointer; 
+            transition: 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .cover-upload:hover { border-color: #f59e0b; background: rgba(255, 255, 255, 0.08); }
+        .upload-icon { font-size: 32px; margin-bottom: 6px; }
+        .upload-text { font-size: 13px; color: #94a3b8; font-weight: 500; }
+
+        /* Input Fields */
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .input-label { font-size: 13px; font-weight: 600; color: #cbd5e1; }
+        .room-input { 
+            background: rgba(255, 255, 255, 0.1); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 12px; 
+            padding: 14px; 
+            color: white; 
+            font-size: 15px; 
+            outline: none; 
+            transition: 0.2s;
+        }
+        .room-input:focus { border-color: #f59e0b; background: rgba(255, 255, 255, 0.15); }
+
+        /* Category Selection Tags */
+        .category-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .cat-tag { 
+            background: rgba(255, 255, 255, 0.08); 
+            border: 1px solid #475569; 
+            padding: 8px 14px; 
+            border-radius: 20px; 
+            font-size: 12px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            color: #cbd5e1;
+        }
+        .cat-tag.active { background: #f59e0b; color: #0f172a; border-color: #f59e0b; }
+
+        /* Go Live Button */
+        .btn-go-live { 
+            background: linear-gradient(135deg, #10b981, #059669); 
+            color: white; 
+            border: none; 
+            padding: 16px; 
+            border-radius: 30px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4); 
+            text-align: center;
+            margin-top: 20px;
+            transition: 0.2s;
+        }
+        .btn-go-live:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button class="back-btn" onclick="history.back()">❮ Back</button>
+        <span class="page-title">Create Live Room</span>
+        <span>🎙️</span>
+    </div>
+
+    <!-- Main Creation Form -->
+    <div class="form-container">
+        
+        <!-- Room Cover Image Upload -->
+        <div class="input-group">
+            <span class="input-label">Room Cover Photo / Banner</span>
+            <div class="cover-upload" onclick="alert('গ্যালারি থেকে ব্যানার ছবি সিলেক্ট করার অপশন খুলবে!')">
+                <div class="upload-icon">📷</div>
+                <div class="upload-text">ტাপ করে রুমের ব্যানার দিন (300x300)</div>
+            </div>
+        </div>
+
+        <!-- Room Title Input -->
+        <div class="input-group">
+            <span class="input-label">Room Title (রুমের নাম)</span>
+            <input type="text" id="roomTitle" class="room-input" placeholder="যেমন: বগুড়ার কিং 👑 আড্ডা ও গান">
+        </div>
+
+        <!-- Category Selector -->
+        <div class="input-group">
+            <span class="input-label">Room Category (ক্যাটাগরি)</span>
+            <div class="category-tags">
+                <div class="cat-tag active" onclick="selectCategory(this)">🎤 Talk/Chat</div>
+                <div class="cat-tag" onclick="selectCategory(this)">🎶 Music & Song</div>
+                <div class="cat-tag" onclick="selectCategory(this)">🎮 Gaming</div>
+                <div class="cat-tag" onclick="selectCategory(this)">🎉 Party</div>
+            </div>
+        </div>
+
+        <!-- Start Go Live Button -->
+        <button class="btn-go-live" onclick="startLiveRoom()">Go Live Now 🚀</button>
+
+    </div>
+
+    <script>
+        function selectCategory(element) {
+            let tags = document.querySelectorAll('.cat-tag');
+            tags.forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function startLiveRoom() {
+            let title = document.getElementById('roomTitle').value;
+            if(!title.trim()) {
+                alert('দয়া করে আপনার রুমের একটি নাম লিখুন!');
+                return;
+            }
+            alert('অভিনন্দন! "' + title + '" নামে আপনার লাইভ রুম সফলভাবে তৈরি হয়েছে। এখন রুমের ভেতরে প্রবেশ করা হচ্ছে...');
+            // লাইভ রুম স্ক্রিনে রিডাইরেক্ট করার কোড এখানে যুক্ত করা যাবে
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Agency & Family Dashboard</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: #f8fafc; 
+            color: #0f172a; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding: 16px;
+        }
+
+        /* Top Header */
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .back-btn { font-size: 16px; cursor: pointer; font-weight: bold; color: #334155; background: none; border: none; }
+        .page-title { font-size: 16px; font-weight: bold; color: #0f172a; }
+
+        /* Family Banner Card */
+        .family-banner { 
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
+            border-radius: 16px; 
+            padding: 20px; 
+            color: white; 
+            text-align: center; 
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .family-logo { width: 64px; height: 64px; border-radius: 50%; border: 3px solid #ffffff; margin: 0 auto 10px auto; object-fit: cover; }
+        .family-name { font-size: 18px; font-weight: bold; }
+        .family-admin { font-size: 12px; opacity: 0.9; margin-top: 4px; }
+
+        /* Target & Salary Section */
+        .section-title { font-size: 14px; font-weight: bold; color: #334155; margin-bottom: 10px; }
+        .target-card { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 14px; 
+            padding: 16px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+        }
+        .target-info { display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; margin-bottom: 8px; }
+        .progress-bar { width: 100%; height: 10px; background: #e2e8f0; border-radius: 5px; overflow: hidden; }
+        .progress-fill { width: 65%; height: 100%; background: #10b981; border-radius: 5px; }
+
+        /* Members List */
+        .members-list { display: flex; flex-direction: column; gap: 10px; }
+        .member-item { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 12px; 
+            padding: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .member-info { display: flex; align-items: center; gap: 12px; }
+        .member-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .member-name { font-size: 14px; font-weight: bold; color: #1e293b; }
+        .member-role { font-size: 11px; color: #64748b; }
+        .member-coins { font-size: 13px; font-weight: bold; color: #f59e0b; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button class="back-btn" onclick="history.back()">❮ Back</button>
+        <span class="page-title">Agency & Family</span>
+        <span>👥</span>
+    </div>
+
+    <!-- Family Banner -->
+    <div class="family-banner">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" class="family-logo" alt="Family Logo">
+        <div class="family-name">TakaLive Star Agency 🌟</div>
+        <div class="family-admin">অ্যাডমিন: আগুন ভাই & সোমি আপু</div>
+    </div>
+
+    <!-- Monthly Target Card -->
+    <div class="section-title">Monthly Target & Salary</div>
+    <div class="target-card">
+        <div class="target-info">
+            <span>Current Target Progress</span>
+            <span style="color: #10b981;">65,000 / 100,000 Coins</span>
+        </div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <div style="font-size: 11px; color: #64748b; margin-top: 8px;">ট্যারেট সম্পন্ন করলে স্বয়ংক্রিয়ভাবে বিকাশ/নগদে স্যালারি প্রসেস করা হবে।</div>
+    </div>
+
+    <!-- Members List Section -->
+    <div class="section-title">Agency Top Hosts & Members</div>
+    <div class="members-list">
+        <div class="member-item">
+            <div class="member-info">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" class="member-avatar" alt="Member">
+                <div>
+                    <div class="member-name">Dj Sakb</div>
+                    <div class="member-role">Lead Host</div>
+                </div>
+            </div>
+            <div class="member-coins">🪙 45,000</div>
+        </div>
+
+        <div class="member-item">
+            <div class="member-info">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" class="member-avatar" alt="Member">
+                <div>
+                    <div class="member-name">নিঝুম</div>
+                    <div class="member-role">Co-Host</div>
+                </div>
+            </div>
+            <div class="member-coins">🪙 20,000</div>
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - VIP & Level Shop</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%); 
+            color: #ffffff; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding: 16px;
+        }
+
+        /* Top Header */
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .back-btn { font-size: 16px; cursor: pointer; font-weight: bold; color: #cbd5e1; background: none; border: none; }
+        .page-title { font-size: 16px; font-weight: bold; color: #f8fafc; }
+        .wallet-pill { background: rgba(245, 158, 11, 0.2); border: 1px solid #f59e0b; padding: 4px 10px; border-radius: 15px; font-size: 12px; font-weight: bold; color: #fbbf24; }
+
+        /* VIP Banner Card */
+        .vip-banner { 
+            background: linear-gradient(135deg, #f59e0b, #b45309); 
+            border-radius: 16px; 
+            padding: 20px; 
+            color: white; 
+            text-align: center; 
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        }
+        .vip-banner h2 { font-size: 20px; font-weight: 800; margin-bottom: 4px; }
+        .vip-banner p { font-size: 12px; opacity: 0.9; }
+
+        /* Section Title */
+        .section-title { font-size: 14px; font-weight: bold; color: #cbd5e1; margin-bottom: 12px; }
+
+        /* VIP Cards Grid */
+        .vip-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+        .vip-card { 
+            background: rgba(255, 255, 255, 0.08); 
+            border: 1px solid rgba(255, 255, 255, 0.15); 
+            border-radius: 14px; 
+            padding: 14px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            backdrop-filter: blur(5px);
+        }
+        .vip-info { display: flex; align-items: center; gap: 12px; }
+        .vip-badge { width: 44px; height: 44px; background: linear-gradient(135deg, #fbbf24, #d97706); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 18px; font-weight: bold; color: #0f172a; }
+        .vip-name { font-size: 15px; font-weight: bold; color: #f8fafc; }
+        .vip-perks { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+        .btn-buy { 
+            background: linear-gradient(135deg, #f59e0b, #d97706); 
+            color: #0f172a; 
+            border: none; 
+            padding: 8px 16px; 
+            border-radius: 20px; 
+            font-weight: bold; 
+            font-size: 12px; 
+            cursor: pointer; 
+        }
+
+        /* Exclusive Items Store */
+        .items-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .item-box { 
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid #334155; 
+            border-radius: 12px; 
+            padding: 14px; 
+            text-align: center; 
+        }
+        .item-icon { font-size: 32px; margin-bottom: 6px; }
+        .item-title { font-size: 12px; font-weight: bold; color: #f8fafc; }
+        .item-price { font-size: 11px; color: #fbbf24; margin: 4px 0 10px 0; }
+        .btn-item-buy { 
+            background: rgba(255, 255, 255, 0.15); 
+            color: white; 
+            border: none; 
+            padding: 6px 12px; 
+            border-radius: 15px; 
+            font-size: 11px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button class="back-btn" onclick="history.back()">❮ Back</button>
+        <span class="page-title">VIP & Level Shop</span>
+        <div class="wallet-pill">🪙 500,000</div>
+    </div>
+
+    <!-- VIP Banner -->
+    <div class="vip-banner">
+        <h2>👑 TakaLive VIP Club</h2>
+        <p>এক্সক্লুসিভ ফ্রেম, কার এন্ট্রি এফেক্ট এবং স্পেশাল ব্যাজ আনলক করুন!</p>
+    </div>
+
+    <!-- VIP Subscription Levels -->
+    <div class="section-title">VIP Membership Levels</div>
+    <div class="vip-grid">
+        <div class="vip-card">
+            <div class="vip-info">
+                <div class="vip-badge">V1</div>
+                <div>
+                    <div class="vip-name">Silver VIP</div>
+                    <div class="vip-perks">স্পেশাল চ্যাট কালার ও ভিআইপি ব্যাজ</div>
+                </div>
+            </div>
+            <button class="btn-buy" onclick="alert('Silver VIP সাবস্ক্রাইব করা হয়েছে!')">🪙 5,000</button>
+        </div>
+
+        <div class="vip-card">
+            <div class="vip-info">
+                <div class="vip-badge" style="background: linear-gradient(135deg, #38bdf8, #0284c7);">V2</div>
+                <div>
+                    <div class="vip-name">Gold VIP</div>
+                    <div class="vip-perks">এন্ট্রি কার এফেক্ট + গোল্ডেন ফ্রেম</div>
+                </div>
+            </div>
+            <button class="btn-buy" onclick="alert('Gold VIP সাবস্ক্রাইব করা হয়েছে!')">🪙 15,000</button>
+        </div>
+
+        <div class="vip-card">
+            <div class="vip-info">
+                <div class="vip-badge" style="background: linear-gradient(135deg, #ec4899, #be185d);">V3</div>
+                <div>
+                    <div class="vip-name">Diamond VIP</div>
+                    <div class="vip-perks">রাজকীয় লায়ন এন্ট্রি ও সর্বোচ্চ প্রায়োরিটি</div>
+                </div>
+            </div>
+            <button class="btn-buy" onclick="alert('Diamond VIP সাবস্ক্রাইব করা হয়েছে!')">🪙 50,000</button>
+        </div>
+    </div>
+
+    <!-- Exclusive Frames & Effects -->
+    <div class="section-title">Exclusive Frames & Effects</div>
+    <div class="items-grid">
+        <div class="item-box">
+            <div class="item-icon">🖼️</div>
+            <div class="item-title">Golden Avatar Frame</div>
+            <div class="item-price">🪙 2,500 / 30 Days</div>
+            <button class="btn-item-buy" onclick="alert('ফ্রেম কেনা সফল হয়েছে!')">Purchase</button>
+        </div>
+
+        <div class="item-box">
+            <div class="item-icon">🏎️</div>
+            <div class="item-title">Sports Car Entry Effect</div>
+            <div class="item-price">🪙 10,000 / 30 Days</div>
+            <button class="btn-item-buy" onclick="alert('এন্ট্রি এফেক্ট কেনা সফল হয়েছে!')">Purchase</button>
+        </div>
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TakaLive Pro - Settings & Account</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { 
+            background: #f8fafc; 
+            color: #0f172a; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            padding: 16px;
+        }
+
+        /* Top Header */
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .back-btn { font-size: 16px; cursor: pointer; font-weight: bold; color: #334155; background: none; border: none; }
+        .page-title { font-size: 16px; font-weight: bold; color: #0f172a; }
+
+        /* Settings Group List */
+        .settings-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .group-title { font-size: 13px; font-weight: bold; color: #64748b; margin-bottom: 4px; padding-left: 4px; }
+        
+        .setting-item { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 12px; 
+            padding: 14px 16px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            cursor: pointer; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: 0.15s;
+        }
+        .setting-item:active { background: #f1f5f9; }
+        
+        .setting-left { display: flex; align-items: center; gap: 12px; }
+        .setting-icon { font-size: 18px; }
+        .setting-name { font-size: 14px; font-weight: 600; color: #1e293b; }
+        .setting-right { font-size: 13px; color: #64748b; display: flex; align-items: center; gap: 6px; }
+        .badge-bound { background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: bold; }
+
+        /* Logout Button */
+        .btn-logout { 
+            background: #fee2e2; 
+            color: #dc2626; 
+            border: 1px solid #fecaca; 
+            border-radius: 14px; 
+            padding: 14px; 
+            font-size: 15px; 
+            font-weight: bold; 
+            text-align: center; 
+            cursor: pointer; 
+            margin-top: 10px;
+            transition: 0.15s;
+        }
+        .btn-logout:active { background: #fecaca; }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <button class="back-btn" onclick="history.back()">❮ Back</button>
+        <span class="page-title">Settings & Account</span>
+        <span>⚙️</span>
+    </div>
+
+    <!-- Account Security & Binding Group -->
+    <div class="settings-group">
+        <div class="group-title">Account Security</div>
+        
+        <div class="setting-item" onclick="prompt('আপনার বিকাশ/নগদ বা বাইন্ড করা নম্বর পরিবর্তন করতে নতুন নম্বর দিন:', '01616261693')">
+            <div class="setting-left">
+                <span class="setting-icon">📱</span>
+                <span class="setting-name">Phone Number Binding</span>
+            </div>
+            <div class="setting-right">
+                <span>01616261693</span>
+                <span class="badge-bound">Verified</span>
+            </div>
+        </div>
+
+        <div class="setting-item" onclick="alert('পাসওয়ার্ড পরিবর্তনের ওটিপি (OTP) পাঠানো হয়েছে!')">
+            <div class="setting-left">
+                <span class="setting-icon">🔒</span>
+                <span class="setting-name">Change Password</span>
+            </div>
+            <div class="setting-right"><span>❯</span></div>
+        </div>
+
+        <div class="setting-item" onclick="alert('গুগল অ্যাকাউন্ট সফলভাবে লিংক করা আছে।')">
+            <div class="setting-left">
+                <span class="setting-icon">🌐</span>
+                <span class="setting-name">Google Account Link</span>
+            </div>
+            <div class="setting-right">
+                <span style="color: #10b981; font-weight: bold;">Linked</span>
+                <span>❯</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Preferences Group -->
+    <div class="settings-group">
+        <div class="group-title">Preferences & Support</div>
+        
+        <div class="setting-item" onclick="alert('নোটিফিকেশন সেটিংস আপডেট করা হয়েছে।')">
+            <div class="setting-left">
+                <span class="setting-icon">🔔</span>
+                <span class="setting-name">Push Notifications</span>
+            </div>
+            <div class="setting-right"><span>On ❯</span></div>
+        </div>
+
+        <div class="setting-item" onclick="alert('ক্যাশআউট ও পেমেন্ট হিস্ট্রি লোড হচ্ছে...')">
+            <div class="setting-left">
+                <span class="setting-icon">💳</span>
+                <span class="setting-name">Cashout History</span>
+            </div>
+            <div class="setting-right"><span>❯</span></div>
+        </div>
+
+        <div class="setting-item" onclick="alert('TakaLive Pro Support: support@takalive.pro')">
+            <div class="setting-left">
+                <span class="setting-icon">🎧</span>
+                <span class="setting-name">Help & Support</span>
+            </div>
+            <div class="setting-right"><span>❯</span></div>
+        </div>
+
+        <div class="setting-item" onclick="alert('App Version: v2.5.0 (Latest)')">
+            <div class="setting-left">
+                <span class="setting-icon">ℹ️</span>
+                <span class="setting-name">About TakaLive Pro</span>
+            </div>
+            <div class="setting-right"><span>v2.5.0</span></div>
+        </div>
+    </div>
+
+    <!-- Logout Action -->
+    <div class="btn-logout" onclick="if(confirm('আপনি কি সত্যি লগআউট করতে চান?')) { alert('লগআউট সফল হয়েছে!'); }">
+        Log Out Account
+    </div>
+
+</body>
+</html>
